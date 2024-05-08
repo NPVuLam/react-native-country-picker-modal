@@ -7,5 +7,5 @@ export declare const CountryModalContext: React.Context<CountryModalContextParam
 interface CountryModalProvider {
     children: React.ReactNode;
 }
-export declare const CountryModalProvider: ({ children }: CountryModalProvider) => JSX.Element;
+export declare const CountryModalProvider: ({ children }: CountryModalProvider) => React.JSX.Element;
 export {};

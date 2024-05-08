@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { ModalProps, FlatListProps, StyleProp, ViewStyle, ImageSourcePropType, ImageStyle } from 'react-native';
 import { Country, CountryCode, Region, Subregion } from './types';
 import { CountryFilter, CountryFilterProps } from './CountryFilter';
 import { FlagButton } from './FlagButton';
 interface CountryPickerProps {
+    allowFontScaling?: boolean;
     countryCode?: CountryCode;
     region?: Region;
     subregion?: Subregion;
@@ -32,19 +33,20 @@ interface CountryPickerProps {
     closeButtonImage?: ImageSourcePropType;
     closeButtonStyle?: StyleProp<ViewStyle>;
     closeButtonImageStyle?: StyleProp<ImageStyle>;
-    renderFlagButton?(props: FlagButton['props']): ReactNode;
-    renderCountryFilter?(props: CountryFilter['props']): ReactNode;
+    renderFlagButton?(props: React.ComponentProps<typeof FlagButton>): ReactNode;
+    renderCountryFilter?(props: React.ComponentProps<typeof CountryFilter>): ReactNode;
     onSelect(country: Country): void;
     onOpen?(): void;
     onClose?(): void;
 }
 export declare const CountryPicker: {
-    (props: CountryPickerProps): JSX.Element;
+    (props: CountryPickerProps): React.JSX.Element;
     defaultProps: {
         withModal: boolean;
         withAlphaFilter: boolean;
         withCallingCode: boolean;
         placeholder: string;
+        allowFontScaling: boolean;
     };
 };
 export {};

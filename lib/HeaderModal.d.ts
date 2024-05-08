@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { ImageSourcePropType, StyleProp, ViewStyle, ImageStyle } from 'react-native';
 interface HeaderModalProps {
     withFilter?: boolean;
@@ -10,7 +10,7 @@ interface HeaderModalProps {
     renderFilter(props: HeaderModalProps): ReactNode;
 }
 export declare const HeaderModal: {
-    (props: HeaderModalProps): JSX.Element;
+    (props: HeaderModalProps): React.JSX.Element;
     defaultProps: {
         withCloseButton: boolean;
     };

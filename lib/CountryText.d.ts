@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { TextProps } from 'react-native';
 export declare const CountryText: (props: TextProps & {
-    children: React.ReactNode;
-}) => JSX.Element;
+    children: ReactNode;
+}) => React.JSX.Element;

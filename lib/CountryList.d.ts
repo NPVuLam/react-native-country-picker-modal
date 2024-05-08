@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { FlatListProps } from 'react-native';
 import { Country } from './types';
 interface CountryListProps {
@@ -14,7 +14,7 @@ interface CountryListProps {
     onSelect(country: Country): void;
 }
 export declare const CountryList: {
-    (props: CountryListProps): JSX.Element;
+    (props: CountryListProps): React.JSX.Element;
     defaultProps: {
         filterFocus: undefined;
     };

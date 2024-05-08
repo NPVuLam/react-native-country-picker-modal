@@ -1,10 +1,11 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { FlagButtonProps } from './FlagButton';
 import { TranslationLanguageCode, CountryCode, Country, Region, Subregion } from './types';
 import { Theme } from './CountryTheme';
 import { CountryFilterProps } from './CountryFilter';
 import { StyleProp, ViewStyle, ModalProps, FlatListProps } from 'react-native';
 interface Props {
+    allowFontScaling?: boolean;
     countryCode: CountryCode;
     region?: Region;
     subregion?: Subregion;
@@ -16,6 +17,7 @@ interface Props {
     modalProps?: ModalProps;
     filterProps?: CountryFilterProps;
     flatListProps?: FlatListProps<Country>;
+    placeholder?: string;
     withAlphaFilter?: boolean;
     withCallingCode?: boolean;
     withCurrency?: boolean;
@@ -38,7 +40,7 @@ interface Props {
     onClose?(): void;
 }
 declare const Main: {
-    ({ theme, translation, ...props }: Props): JSX.Element;
+    ({ theme, translation, ...props }: Props): React.JSX.Element;
     defaultProps: {
         onSelect: () => void;
         withEmoji: boolean;

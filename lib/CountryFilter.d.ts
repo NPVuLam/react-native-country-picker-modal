@@ -1,8 +1,8 @@
-/// <reference types="react" />
+import React from 'react';
 import { TextInputProps } from 'react-native';
-export declare type CountryFilterProps = TextInputProps;
+export type CountryFilterProps = TextInputProps;
 export declare const CountryFilter: {
-    (props: TextInputProps): JSX.Element;
+    (props: CountryFilterProps): React.JSX.Element;
     defaultProps: {
         autoFocus: boolean;
         placeholder: string;

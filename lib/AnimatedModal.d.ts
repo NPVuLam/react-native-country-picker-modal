@@ -4,7 +4,7 @@ interface Props {
     children: React.ReactNode;
 }
 export declare const AnimatedModal: {
-    ({ children, visible }: Props): JSX.Element;
+    ({ children, visible }: Props): React.JSX.Element;
     defaultProps: {
         visible: boolean;
     };

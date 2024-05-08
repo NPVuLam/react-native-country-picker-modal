@@ -1,17 +1,10 @@
-/// <reference types="react" />
-import { StyleProp, ViewStyle, ImageSourcePropType, ImageStyle } from 'react-native';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { ImageSourcePropType, ImageStyle, StyleProp, ViewStyle } from 'react-native';
 interface CloseButtonProps {
     style?: StyleProp<ViewStyle>;
     imageStyle?: StyleProp<ImageStyle>;
     image?: ImageSourcePropType;
     onPress?(): void;
 }
-declare const _default: {
-    (props: CloseButtonProps): JSX.Element;
-    prototype: {
-        onPress: PropTypes.Requireable<(...args: any[]) => any>;
-        image: PropTypes.Requireable<any>;
-    };
-};
+declare const _default: React.FC<CloseButtonProps>;
 export default _default;

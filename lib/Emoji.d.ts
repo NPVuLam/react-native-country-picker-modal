@@ -1,5 +1,5 @@
 import React from 'react';
 declare const Emoji: React.MemoExoticComponent<({ name }: {
     name: string;
-}) => JSX.Element>;
+}) => React.JSX.Element>;
 export { Emoji };

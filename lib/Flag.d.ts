@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { CountryCode } from './types';
 interface FlagType {
     countryCode: CountryCode;
@@ -7,7 +7,7 @@ interface FlagType {
     flagSize: number;
 }
 export declare const Flag: {
-    ({ countryCode, withEmoji, withFlagButton, flagSize, }: FlagType): JSX.Element | null;
+    ({ countryCode, withEmoji, withFlagButton, flagSize, }: FlagType): React.JSX.Element | null;
     defaultProps: {
         withEmoji: boolean;
         withFlagButton: boolean;

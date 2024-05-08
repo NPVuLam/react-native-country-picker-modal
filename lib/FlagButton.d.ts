@@ -1,7 +1,8 @@
-/// <reference types="react" />
+import React from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import { CountryCode } from './types';
 export interface FlagButtonProps {
+    allowFontScaling?: boolean;
     withEmoji?: boolean;
     withCountryNameButton?: boolean;
     withCurrencyButton?: boolean;
@@ -13,7 +14,7 @@ export interface FlagButtonProps {
     onOpen?(): void;
 }
 export declare const FlagButton: {
-    ({ withEmoji, withCountryNameButton, withCallingCodeButton, withCurrencyButton, withFlagButton, countryCode, containerButtonStyle, onOpen, placeholder, }: FlagButtonProps): JSX.Element;
+    ({ allowFontScaling, withEmoji, withCountryNameButton, withCallingCodeButton, withCurrencyButton, withFlagButton, countryCode, containerButtonStyle, onOpen, placeholder, }: FlagButtonProps): React.JSX.Element;
     defaultProps: {
         withEmoji: boolean;
         withCountryNameButton: boolean;
