@@ -28,7 +28,6 @@
     "verify": "yarn lint && yarn build && yarn test",
     "prepublishOnly": "yarn verify && yarn config:npm",
     "postpublish": "yarn config:dev",
-    "postinstall": "cp -rf ./src/assets ./lib/assets",
     "deploy": "gh-pages -d web-build",
     "predeploy": "yarn verify && expo build:web && mkdir web-build/countries && cp ./data/countries.json web-build/countries/index.json"
   },
