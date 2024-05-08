@@ -9,6 +9,7 @@ import {
   Subregion,
 } from './types'
 import Fuse from 'fuse.js'
+import COUNTRIES_EMOJI from './assets/data/countries-emoji.json'
 
 const imageJsonUrl =
   'https://xcarpentier.github.io/react-native-country-picker-modal/countries/'
@@ -27,6 +28,13 @@ const localData: DataCountry = {
 export const loadDataAsync = (
   (data: DataCountry) =>
   (dataType: FlagType = FlagType.EMOJI): Promise<CountryMap> => {
+    const emojiCountries = Object.fromEntries(
+      Object.entries(COUNTRIES_EMOJI).map(([key, value]) => {
+        const country = value as unknown as Country
+        country.cca2 = key as CountryCode
+        return [key, country]
+      })
+    ) as CountryMap
     return new Promise((resolve, reject) => {
       switch (dataType) {
         case FlagType.FLAT:
@@ -44,8 +52,8 @@ export const loadDataAsync = (
           break
         default:
           if (!data.emojiCountries) {
-            data.emojiCountries = require('./assets/data/countries-emoji.json')
-            resolve(data.emojiCountries!)
+            data.emojiCountries = emojiCountries
+            resolve(data.emojiCountries)
           } else {
             resolve(data.emojiCountries)
           }
